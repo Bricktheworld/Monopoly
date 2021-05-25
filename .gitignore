@@ -4,3 +4,4 @@ VultrHelper.exe
 *.generated.h
 *.generated.cpp
 CMakeFiles/
+.cache/
