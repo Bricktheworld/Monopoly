@@ -5,3 +5,5 @@ VultrHelper.exe
 *.generated.cpp
 CMakeFiles/
 .cache/
+.idea/
+cmake-build-debug/
