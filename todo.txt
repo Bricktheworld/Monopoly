@@ -1,0 +1,6 @@
+ADD src/data.cpp empty
+ADD current path when give error editor
+Output Vultrhelper to monopoly
+FIX CMakeLists.txt in Monopoly for VultrHelper
+FIX Save file full path
+FIX Dimensions framebuffer different

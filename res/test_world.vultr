@@ -476,7 +476,7 @@
                                 ".fbx",
                                 ".blend"
                             ],
-                            "path": "C:\\Users\\Brand\\Dev\\Monopoly\\res\\models\\cube.obj"
+                            "path": "models/cube.obj"
                         }
                     },
                     {
@@ -486,7 +486,7 @@
                                 ".fbx",
                                 ".blend"
                             ],
-                            "path": "C:\\Users\\Brand\\Dev\\Monopoly\\res\\models\\cube.obj"
+                            "path": "models/cube.obj"
                         }
                     },
                     {
@@ -496,7 +496,7 @@
                                 ".fbx",
                                 ".blend"
                             ],
-                            "path": "C:\\Users\\Brand\\Dev\\Monopoly\\res\\models\\cube.obj"
+                            "path": "models/cube.obj"
                         }
                     },
                     {
@@ -506,7 +506,7 @@
                                 ".fbx",
                                 ".blend"
                             ],
-                            "path": "C:\\Users\\Brand\\Dev\\Monopoly\\res\\models\\cube.obj"
+                            "path": "models/cube.obj"
                         }
                     }
                 ],
