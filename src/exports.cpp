@@ -3,7 +3,7 @@
 #include <imgui/imgui.h>
 void *init(void *engine)
 {
-    return new SandboxTest((Vultr::Engine *)engine);
+    return static_cast<void *>(new SandboxTest(static_cast<Vultr::Engine *>(engine)));
 }
 void flush(void *game)
 {

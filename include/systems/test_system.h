@@ -3,7 +3,7 @@
 
 namespace TestSystem
 {
-    void register_system();
-    void update(const Vultr::UpdateTick &tick);
-    void on_create_entity(Vultr::Entity entity);
+    void register_system(Vultr::Engine *e);
+    void update(Vultr::Engine *e, const Vultr::UpdateTick &tick);
+    void on_create_entity(Vultr::Engine *e, Vultr::Entity entity);
 }; // namespace TestSystem

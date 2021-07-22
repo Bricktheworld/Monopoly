@@ -3,8 +3,8 @@
 namespace TestSystem
 {
     using namespace Vultr;
-    Component &get_provider()
+    Component &get_provider(Engine *e)
     {
-        return *world_get_system_provider<Component>();
+        return *world_get_system_provider<Component>(e);
     }
 } // namespace TestSystem

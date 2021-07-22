@@ -450,7 +450,7 @@
             "SkyBoxComponent": {
                 "component_array": [
                     {
-                        "identifier": "1"
+                        "identifier": 1
                     }
                 ],
                 "entity_to_index_map": [

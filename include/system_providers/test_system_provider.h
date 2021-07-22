@@ -10,6 +10,6 @@ namespace TestSystem
         double test_prop = 0.0;
     };
 
-    Component &get_provider();
+    Component &get_provider(Vultr::Engine *e);
 
 } // namespace TestSystem

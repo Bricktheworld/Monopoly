@@ -1,3 +1,3 @@
 #pragma once
 
-void register_components();
+void register_components(void *);
