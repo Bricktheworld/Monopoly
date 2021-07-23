@@ -12,14 +12,14 @@
                 ],
                 "entity_to_index_map": [
                     [
-                        10,
+                        6,
                         0
                     ]
                 ],
                 "index_to_entity_map": [
                     [
                         0,
-                        10
+                        6
                     ]
                 ],
                 "size": 1
@@ -71,6 +71,177 @@
             },
             "MaterialComponent": {
                 "component_array": [
+                    {
+                        "colors": {
+                            "tint": {
+                                "value": {
+                                    "w": 1.0,
+                                    "x": 1.0,
+                                    "y": 1.0,
+                                    "z": 1.0
+                                }
+                            }
+                        },
+                        "floats": {
+                            "material.shininess": 1.0
+                        },
+                        "ints": {
+                            "material.diffuse": 0,
+                            "material.specular": 1
+                        },
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "textures/cube/diffuse.png"
+                                },
+                                "name": "Diffuse",
+                                "slot": 0
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "textures/cube/specular.png"
+                                },
+                                "name": "Specular",
+                                "slot": 1
+                            }
+                        ],
+                        "vec3s": {},
+                        "vec4s": {}
+                    },
+                    {
+                        "colors": {
+                            "tint": {
+                                "value": {
+                                    "w": 1.0,
+                                    "x": 1.0,
+                                    "y": 1.0,
+                                    "z": 1.0
+                                }
+                            }
+                        },
+                        "floats": {
+                            "material.shininess": 1.0
+                        },
+                        "ints": {
+                            "material.diffuse": 0,
+                            "material.specular": 1
+                        },
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "textures/cube/diffuse.png"
+                                },
+                                "name": "Diffuse",
+                                "slot": 0
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "textures/cube/specular.png"
+                                },
+                                "name": "Specular",
+                                "slot": 1
+                            }
+                        ],
+                        "vec3s": {},
+                        "vec4s": {}
+                    },
+                    {
+                        "colors": {
+                            "tint": {
+                                "value": {
+                                    "w": 1.0,
+                                    "x": 1.0,
+                                    "y": 0.9999899864196777,
+                                    "z": 0.9999899864196777
+                                }
+                            }
+                        },
+                        "floats": {
+                            "material.shininess": 1.0
+                        },
+                        "ints": {
+                            "material.diffuse": 0,
+                            "material.specular": 1
+                        },
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "textures/cube/diffuse.png"
+                                },
+                                "name": "Diffuse",
+                                "slot": 0
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "textures/cube/specular.png"
+                                },
+                                "name": "Specular",
+                                "slot": 1
+                            }
+                        ],
+                        "vec3s": {},
+                        "vec4s": {}
+                    },
                     {
                         "colors": {
                             "tint": {
@@ -228,183 +399,12 @@
                         ],
                         "vec3s": {},
                         "vec4s": {}
-                    },
-                    {
-                        "colors": {
-                            "tint": {
-                                "value": {
-                                    "w": 1.0,
-                                    "x": 1.0,
-                                    "y": 0.9999899864196777,
-                                    "z": 0.9999899864196777
-                                }
-                            }
-                        },
-                        "floats": {
-                            "material.shininess": 1.0
-                        },
-                        "ints": {
-                            "material.diffuse": 0,
-                            "material.specular": 1
-                        },
-                        "shader_source": {
-                            "expected_extensions": [
-                                ".glsl"
-                            ],
-                            "path": "shaders/forward_material.glsl"
-                        },
-                        "textures": [
-                            {
-                                "file": {
-                                    "expected_extensions": [
-                                        ".jpeg",
-                                        ".jpg",
-                                        ".png",
-                                        ".bmp",
-                                        ".dds"
-                                    ],
-                                    "path": "textures/cube/diffuse.png"
-                                },
-                                "name": "Diffuse",
-                                "slot": 0
-                            },
-                            {
-                                "file": {
-                                    "expected_extensions": [
-                                        ".jpeg",
-                                        ".jpg",
-                                        ".png",
-                                        ".bmp",
-                                        ".dds"
-                                    ],
-                                    "path": "textures/cube/specular.png"
-                                },
-                                "name": "Specular",
-                                "slot": 1
-                            }
-                        ],
-                        "vec3s": {},
-                        "vec4s": {}
-                    },
-                    {
-                        "colors": {
-                            "tint": {
-                                "value": {
-                                    "w": 1.0,
-                                    "x": 1.0,
-                                    "y": 1.0,
-                                    "z": 1.0
-                                }
-                            }
-                        },
-                        "floats": {
-                            "material.shininess": 1.0
-                        },
-                        "ints": {
-                            "material.diffuse": 0,
-                            "material.specular": 1
-                        },
-                        "shader_source": {
-                            "expected_extensions": [
-                                ".glsl"
-                            ],
-                            "path": "shaders/forward_material.glsl"
-                        },
-                        "textures": [
-                            {
-                                "file": {
-                                    "expected_extensions": [
-                                        ".jpeg",
-                                        ".jpg",
-                                        ".png",
-                                        ".bmp",
-                                        ".dds"
-                                    ],
-                                    "path": "textures/cube/diffuse.png"
-                                },
-                                "name": "Diffuse",
-                                "slot": 0
-                            },
-                            {
-                                "file": {
-                                    "expected_extensions": [
-                                        ".jpeg",
-                                        ".jpg",
-                                        ".png",
-                                        ".bmp",
-                                        ".dds"
-                                    ],
-                                    "path": "textures/cube/specular.png"
-                                },
-                                "name": "Specular",
-                                "slot": 1
-                            }
-                        ],
-                        "vec3s": {},
-                        "vec4s": {}
-                    },
-                    {
-                        "colors": {
-                            "tint": {
-                                "value": {
-                                    "w": 1.0,
-                                    "x": 1.0,
-                                    "y": 1.0,
-                                    "z": 1.0
-                                }
-                            }
-                        },
-                        "floats": {
-                            "material.shininess": 1.0
-                        },
-                        "ints": {
-                            "material.diffuse": 0,
-                            "material.specular": 1
-                        },
-                        "shader_source": {
-                            "expected_extensions": [
-                                ".glsl"
-                            ],
-                            "path": "shaders/forward_material.glsl"
-                        },
-                        "textures": [
-                            {
-                                "file": {
-                                    "expected_extensions": [
-                                        ".jpeg",
-                                        ".jpg",
-                                        ".png",
-                                        ".bmp",
-                                        ".dds"
-                                    ],
-                                    "path": "textures/cube/diffuse.png"
-                                },
-                                "name": "Diffuse",
-                                "slot": 0
-                            },
-                            {
-                                "file": {
-                                    "expected_extensions": [
-                                        ".jpeg",
-                                        ".jpg",
-                                        ".png",
-                                        ".bmp",
-                                        ".dds"
-                                    ],
-                                    "path": "textures/cube/specular.png"
-                                },
-                                "name": "Specular",
-                                "slot": 1
-                            }
-                        ],
-                        "vec3s": {},
-                        "vec4s": {}
                     }
                 ],
                 "entity_to_index_map": [
                     [
-                        10,
-                        1
+                        6,
+                        4
                     ],
                     [
                         2,
@@ -420,13 +420,17 @@
                     ],
                     [
                         3,
-                        4
+                        1
                     ]
                 ],
                 "index_to_entity_map": [
                     [
+                        4,
+                        6
+                    ],
+                    [
                         1,
-                        10
+                        3
                     ],
                     [
                         0,
@@ -439,10 +443,6 @@
                     [
                         3,
                         2
-                    ],
-                    [
-                        4,
-                        3
                     ]
                 ],
                 "size": 5
@@ -455,14 +455,14 @@
                 ],
                 "entity_to_index_map": [
                     [
-                        10,
+                        6,
                         0
                     ]
                 ],
                 "index_to_entity_map": [
                     [
                         0,
-                        10
+                        6
                     ]
                 ],
                 "size": 1
@@ -557,20 +557,20 @@
                 "component_array": [
                     {
                         "position": {
-                            "x": -3.632876396179199,
-                            "y": 1.2731961011886597,
-                            "z": 1.7652463912963867
+                            "x": -1.401998519897461,
+                            "y": 1.235740303993225,
+                            "z": -1.9965202808380127
                         },
                         "rotation": {
-                            "w": 0.8531420826911926,
-                            "x": -0.10223312675952911,
-                            "y": -0.49085676670074463,
-                            "z": -0.14407162368297577
+                            "w": 0.598888099193573,
+                            "x": 1.5246396145585095e-08,
+                            "y": -0.8008327484130859,
+                            "z": -1.5246396145585095e-08
                         },
                         "scale": {
-                            "x": 0.999995768070221,
+                            "x": 0.9999998807907104,
                             "y": 1.0,
-                            "z": 0.9999945163726807
+                            "z": 0.9999998807907104
                         }
                     },
                     {
@@ -629,9 +629,9 @@
                     },
                     {
                         "position": {
-                            "x": 2.401257276535034,
+                            "x": 2.1153464317321777,
                             "y": 1.235734224319458,
-                            "z": -0.06383788585662842
+                            "z": 0.07763874530792236
                         },
                         "rotation": {
                             "w": 0.20524859428405762,
@@ -647,27 +647,27 @@
                     },
                     {
                         "position": {
-                            "x": -1.401998519897461,
-                            "y": 1.235740303993225,
-                            "z": -1.9965202808380127
+                            "x": -0.11299999803304672,
+                            "y": 1.2731961011886597,
+                            "z": 1.7652463912963867
                         },
                         "rotation": {
-                            "w": 0.598888099193573,
-                            "x": 1.5246396145585095e-08,
-                            "y": -0.8008327484130859,
-                            "z": -1.5246396145585095e-08
+                            "w": 0.8531420826911926,
+                            "x": -0.10223312675952911,
+                            "y": -0.49085676670074463,
+                            "z": -0.14407162368297577
                         },
                         "scale": {
-                            "x": 0.9999998807907104,
+                            "x": 0.999995768070221,
                             "y": 1.0,
-                            "z": 0.9999998807907104
+                            "z": 0.9999945163726807
                         }
                     }
                 ],
                 "entity_to_index_map": [
                     [
-                        10,
-                        0
+                        6,
+                        5
                     ],
                     [
                         2,
@@ -687,13 +687,17 @@
                     ],
                     [
                         3,
-                        5
+                        0
                     ]
                 ],
                 "index_to_entity_map": [
                     [
+                        5,
+                        6
+                    ],
+                    [
                         0,
-                        10
+                        3
                     ],
                     [
                         1,
@@ -710,10 +714,6 @@
                     [
                         4,
                         2
-                    ],
-                    [
-                        5,
-                        3
                     ]
                 ],
                 "size": 6
@@ -728,10 +728,10 @@
             "MaterialComponent": 1,
             "SkyBoxComponent": 6,
             "StaticMeshComponent": 0,
-            "TestComponent": 7,
+            "TestComponent": 9,
             "TransformComponent": 2
         },
-        "next_component_type": 8
+        "next_component_type": 10
     },
     "EntityManager": {
         "living_entites": [
@@ -739,7 +739,8 @@
             2,
             3,
             4,
-            10,
+            5,
+            6,
             38
         ],
         "living_entity_count": 4,
@@ -752,40 +753,6 @@
                 0,
                 0,
                 0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0,
-                0
-            ],
-            "10": [
-                0,
-                1,
-                1,
-                0,
-                1,
-                0,
-                1,
                 0,
                 0,
                 0,
@@ -922,6 +889,74 @@
                 0,
                 0,
                 0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "5": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "6": [
+                0,
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
                 0,
                 0,
                 0,

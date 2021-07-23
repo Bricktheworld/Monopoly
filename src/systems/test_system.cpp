@@ -19,7 +19,7 @@ namespace TestSystem
         for (auto entity : provider.entities)
         {
             auto &transform = entity_get_component<TransformComponent>(e, entity);
-            transform.position.y += tick.m_delta_time;
+            transform.position.z += tick.m_delta_time;
         }
     }
 
