@@ -1,3 +1,3 @@
 #pragma once
 
-void register_components(void *);
+void sandbox_register_components(void *);

@@ -1,16 +1,11 @@
 #pragma once
 #include <vultr.hpp>
 
-class SandboxTest : public Game
+struct SandboxTest : public Game
 {
-  public:
     SandboxTest(void *p_engine);
-    void RegisterComponents(Vultr::Engine *e) override;
-    void Init(Vultr::Engine *e) override;
-    void Update(Vultr::Engine *e, const Vultr::UpdateTick &tick) override;
-    void Flush(Vultr::Engine *e) override;
-    void SetImGuiContext(ImGuiContext *context) override;
-
-  private:
-    Vultr::Engine *engine;
+    void register_components(Vultr::Engine *e) override;
+    Scene *init_scene(Vultr::Engine *e, Vultr::World *world) override;
+    void flush(Vultr::Engine *e) override;
+    void set_imgui_context(ImGuiContext *context) override;
 };

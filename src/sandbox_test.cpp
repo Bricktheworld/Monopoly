@@ -1,4 +1,5 @@
 #include <sandbox_test.h>
+#include <scenes/test_world.h>
 #include <components/test_component.h>
 #include <systems/test_system.h>
 #include <component_registrar.h>
@@ -6,29 +7,25 @@
 using namespace Vultr;
 SandboxTest::SandboxTest(void *engine)
 {
-    this->engine = (Vultr::Engine *)engine;
-}
-void SandboxTest::RegisterComponents(Vultr::Engine *e)
-{
-    register_components(e);
 }
 
-void SandboxTest::Init(Vultr::Engine *e)
+void SandboxTest::register_components(Vultr::Engine *e)
 {
-    TestSystem::register_system(e);
+    sandbox_register_components(e);
 }
 
-void SandboxTest::Update(Vultr::Engine *e, const Vultr::UpdateTick &tick)
+Scene *SandboxTest::init_scene(Vultr::Engine *e, Vultr::World *world)
 {
-    TestSystem::update(e, tick);
-    printf("%f ms\n", tick.m_delta_time);
+    auto *scene = new TestWorld();
+    scene->init(e);
+    return scene;
 }
 
-void SandboxTest::Flush(Vultr::Engine *e)
+void SandboxTest::flush(Vultr::Engine *e)
 {
 }
 
-void SandboxTest::SetImGuiContext(ImGuiContext *context)
+void SandboxTest::set_imgui_context(ImGuiContext *context)
 {
     ImGui::SetCurrentContext(context);
 }
