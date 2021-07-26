@@ -31,11 +31,6 @@ in vec3 FragPos;
 in vec3 Normal;
 in vec2 FragUV;
 
-struct Material {
-    sampler2D diffuse;
-    sampler2D specular;
-    float shininess;
-}; 
 
 struct DirectionalLight {
   vec3 direction;
@@ -58,8 +53,12 @@ struct PointLight {
 };
 
 uniform vec3 viewPos;
-uniform vec4 tint;
-uniform Material material;
+uniform vec4 u_Tint;
+
+uniform sampler2D u_Diffuse;
+uniform sampler2D u_Specular;
+uniform float u_Shininess;
+
 uniform DirectionalLight directional_light;
 
 vec3 calc_directional_light(DirectionalLight light, vec3 normal, vec3 view_direction)
@@ -71,12 +70,12 @@ vec3 calc_directional_light(DirectionalLight light, vec3 normal, vec3 view_direc
 
     // specular shading
     vec3 reflect_direction = reflect(-light_direction, normal);
-    float spec = pow(max(dot(view_direction, reflect_direction), 0.0), material.shininess);
+    float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_Shininess);
 
     // combine results
-    vec3 ambient  = light.ambient  * vec3(texture(material.diffuse, FragUV));
-    vec3 diffuse  = light.diffuse  * diff * vec3(texture(material.diffuse, FragUV));
-    vec3 specular = light.specular * spec * vec3(texture(material.specular, FragUV));
+    vec3 ambient  = light.ambient  * vec3(texture(u_Diffuse, FragUV));
+    vec3 diffuse  = light.diffuse  * diff * vec3(texture(u_Diffuse, FragUV));
+    vec3 specular = light.specular * spec * vec3(texture(u_Specular, FragUV));
     return (ambient + diffuse + specular);
 }  
 
