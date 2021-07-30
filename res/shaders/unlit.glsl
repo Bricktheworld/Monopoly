@@ -6,11 +6,18 @@ layout (location = 0) in vec3 aPos;
 layout (location = 1) in vec3 aNormal;
 layout (location = 2) in vec2 aTexCoords;
 
-uniform mat4 MVP;
+layout (std140) uniform Camera {
+    vec4 position;
+    mat4 view_matrix;
+    mat4 projection_matrix;
+} ub_Camera;
+
+uniform mat4 u_MVP;
+uniform mat4 u_Model_matrix;
 
 void main()
 {
-    gl_Position = MVP * vec4(aPos, 1.0);
+    gl_Position = u_MVP * vec4(aPos, 1.0);
 }
 
 
