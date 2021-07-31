@@ -48,7 +48,7 @@ struct DirectionalLight {
 
   vec3 ambient;
   vec3 diffuse;
-  vec3 specular;
+  float specular;
 };
 
 struct PointLight {
@@ -69,29 +69,28 @@ uniform sampler2D u_Diffuse;
 uniform sampler2D u_Specular;
 uniform float u_Shininess;
 
-uniform DirectionalLight directional_light;
+// TODO: Remove this
+uniform vec3 light_position;
 
-vec3 calc_directional_light(DirectionalLight light, vec3 normal, vec3 view_direction)
-{
-    vec3 light_direction = normalize(-light.direction);
-
-    // diffuse shading
-    float diff = max(dot(normal, light_direction), 0.0);
-
-    // specular shading
-    vec3 reflect_direction = reflect(-light_direction, normal);
-    float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_Shininess);
-
-    // combine results
-    vec3 ambient  = light.ambient  * vec3(texture(u_Diffuse, f_UV));
-    vec3 diffuse  = light.diffuse  * diff * vec3(texture(u_Diffuse, f_UV));
-    vec3 specular = light.specular * spec * vec3(texture(u_Specular, f_UV));
-    return (ambient + diffuse + specular);
-}  
+uniform DirectionalLight u_Directional_light;
+uniform mat3 u_Normal_matrix;
 
 void main()
 {    
+    vec3 ambient = u_Directional_light.ambient * u_Directional_light.diffuse * vec3(texture(u_Diffuse, f_UV));
+
+    vec3 normal = normalize(u_Normal_matrix * f_Normal);
+    vec3 light_direction = normalize(light_position - f_Position);
+
+    float diffuse_impact = max(dot(normal, light_direction), 0.0);
+    vec3 diffuse = diffuse_impact * u_Directional_light.diffuse * vec3(texture(u_Diffuse, f_UV));
+
     vec3 view_direction = normalize(ub_Camera.position.xyz - f_Position);
-    vec3 result = calc_directional_light(directional_light, f_Normal, view_direction);
+    vec3 reflect_direction = reflect(-light_direction, normal);
+
+    float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_Shininess);
+    vec3 specular = u_Directional_light.specular * spec * u_Directional_light.diffuse * vec3(texture(u_Specular, f_UV));
+    
+    vec3 result = (ambient + diffuse + specular) * u_Tint.xyz;
     color = vec4(result, 1.0f);
 }
