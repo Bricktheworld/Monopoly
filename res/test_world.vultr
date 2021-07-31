@@ -35,8 +35,8 @@
                         "ambient": {
                             "value": {
                                 "w": 255.0,
-                                "x": 255.0,
-                                "y": 255.0,
+                                "x": 0.0,
+                                "y": 0.0,
                                 "z": 255.0
                             }
                         },
@@ -44,9 +44,32 @@
                         "diffuse": {
                             "value": {
                                 "w": 255.0,
-                                "x": 255.0,
-                                "y": 255.0,
+                                "x": 0.0,
+                                "y": 0.0,
                                 "z": 255.0
+                            }
+                        },
+                        "linear": 0.14000000059604645,
+                        "quadratic": 0.07000000029802322,
+                        "specular": 2.759999990463257,
+                        "type": 1
+                    },
+                    {
+                        "ambient": {
+                            "value": {
+                                "w": 255.0,
+                                "x": 255.0,
+                                "y": 0.0,
+                                "z": 0.0
+                            }
+                        },
+                        "constant": 1.0,
+                        "diffuse": {
+                            "value": {
+                                "w": 255.0,
+                                "x": 255.0,
+                                "y": 0.0,
+                                "z": 0.0
                             }
                         },
                         "linear": 0.14000000059604645,
@@ -59,15 +82,23 @@
                     [
                         2,
                         0
+                    ],
+                    [
+                        1,
+                        1
                     ]
                 ],
                 "index_to_entity_map": [
                     [
                         0,
                         2
+                    ],
+                    [
+                        1,
+                        1
                     ]
                 ],
-                "size": 1
+                "size": 2
             },
             "MaterialComponent": {
                 "component_array": [
@@ -98,9 +129,91 @@
                                 "data.u_color": {
                                     "value": {
                                         "w": 255.0,
+                                        "x": 0.0,
+                                        "y": 0.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Color",
+                                "type": 7
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 2,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "textures/cube/diffuse.png"
+                                },
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "textures/cube/specular.png"
+                                },
+                                "location": "u_Specular"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
                                         "x": 255.0,
                                         "y": 254.99745178222656,
                                         "z": 254.99745178222656
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 128.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/unlit.glsl"
+                        },
+                        "texture_count": 0,
+                        "textures": [],
+                        "uniform_count": 1,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 0.0,
+                                        "z": 0.0
                                     }
                                 },
                                 "location": "u_Color",
@@ -178,6 +291,14 @@
                     [
                         6,
                         0
+                    ],
+                    [
+                        1,
+                        3
+                    ],
+                    [
+                        3,
+                        4
                     ]
                 ],
                 "index_to_entity_map": [
@@ -192,9 +313,17 @@
                     [
                         0,
                         6
+                    ],
+                    [
+                        3,
+                        1
+                    ],
+                    [
+                        4,
+                        3
                     ]
                 ],
-                "size": 3
+                "size": 5
             },
             "SkyBoxComponent": {
                 "component_array": [
@@ -237,6 +366,26 @@
                             ],
                             "path": "models/cube.obj"
                         }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/cube.obj"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/cube.obj"
+                        }
                     }
                 ],
                 "entity_to_index_map": [
@@ -247,6 +396,14 @@
                     [
                         2,
                         0
+                    ],
+                    [
+                        1,
+                        2
+                    ],
+                    [
+                        3,
+                        3
                     ]
                 ],
                 "index_to_entity_map": [
@@ -257,9 +414,17 @@
                     [
                         0,
                         2
+                    ],
+                    [
+                        2,
+                        1
+                    ],
+                    [
+                        3,
+                        3
                     ]
                 ],
-                "size": 2
+                "size": 4
             },
             "TestComponent": {
                 "entity_to_index_map": [],
@@ -288,9 +453,9 @@
                     },
                     {
                         "position": {
-                            "x": 0.0,
+                            "x": 2.2576708793640137,
                             "y": 2.9802322387695313e-08,
-                            "z": 5.960464477539063e-08
+                            "z": -0.0873105525970459
                         },
                         "rotation": {
                             "w": 1.0,
@@ -306,9 +471,9 @@
                     },
                     {
                         "position": {
-                            "x": 4.999098300933838,
-                            "y": 0.9800765514373779,
-                            "z": -0.45819127559661865
+                            "x": 5.654852867126465,
+                            "y": 0.7272684574127197,
+                            "z": -1.2758121490478516
                         },
                         "rotation": {
                             "w": 1.0,
@@ -320,6 +485,42 @@
                             "x": 0.36000001430511475,
                             "y": 0.36000001430511475,
                             "z": 0.36000001430511475
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 5.728532791137695,
+                            "y": 0.6977517604827881,
+                            "z": 1.2734882831573486
+                        },
+                        "rotation": {
+                            "w": 1.0,
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "scale": {
+                            "x": 0.36000001430511475,
+                            "y": 0.36000001430511475,
+                            "z": 0.36000001430511475
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 3.875107765197754,
+                            "y": 6.282144227043318e-07,
+                            "z": -3.673511028289795
+                        },
+                        "rotation": {
+                            "w": 0.8416571617126465,
+                            "x": 8.666912520993719e-08,
+                            "y": -0.5400122404098511,
+                            "z": 1.236287943129355e-07
+                        },
+                        "scale": {
+                            "x": 0.9999996423721313,
+                            "y": 1.0,
+                            "z": 0.9999996423721313
                         }
                     }
                 ],
@@ -335,6 +536,14 @@
                     [
                         6,
                         0
+                    ],
+                    [
+                        1,
+                        3
+                    ],
+                    [
+                        3,
+                        4
                     ]
                 ],
                 "index_to_entity_map": [
@@ -349,9 +558,17 @@
                     [
                         1,
                         9
+                    ],
+                    [
+                        3,
+                        1
+                    ],
+                    [
+                        4,
+                        3
                     ]
                 ],
-                "size": 3
+                "size": 5
             }
         }
     },
@@ -370,18 +587,88 @@
     },
     "EntityManager": {
         "living_entites": [
+            1,
             2,
+            3,
             5,
             6,
             9
         ],
-        "living_entity_count": 1,
+        "living_entity_count": 3,
         "signatures": {
+            "1": [
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
             "2": [
                 1,
                 1,
                 1,
                 1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "3": [
+                1,
+                1,
+                1,
+                0,
                 0,
                 0,
                 0,
