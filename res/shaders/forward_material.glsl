@@ -69,9 +69,6 @@ uniform sampler2D u_Diffuse;
 uniform sampler2D u_Specular;
 uniform float u_Shininess;
 
-// TODO: Remove this
-uniform vec3 light_position;
-
 uniform DirectionalLight u_Directional_light;
 uniform mat3 u_Normal_matrix;
 
@@ -80,7 +77,7 @@ void main()
     vec3 ambient = u_Directional_light.ambient * u_Directional_light.diffuse * vec3(texture(u_Diffuse, f_UV));
 
     vec3 normal = normalize(u_Normal_matrix * f_Normal);
-    vec3 light_direction = normalize(light_position - f_Position);
+    vec3 light_direction = normalize(-u_Directional_light.direction);
 
     float diffuse_impact = max(dot(normal, light_direction), 0.0);
     vec3 diffuse = diffuse_impact * u_Directional_light.diffuse * vec3(texture(u_Diffuse, f_UV));
