@@ -43,13 +43,13 @@ layout (std140) uniform Camera {
     mat4 projection_matrix;
 } ub_Camera;
 
-struct DirectionalLight {
-  vec3 direction;
+layout (std140) uniform DirectionalLight {
+  vec4 direction;
 
-  vec3 ambient;
-  vec3 diffuse;
+  vec4 ambient;
+  vec4 diffuse;
   float specular;
-};
+} ub_Directional_light;
 
 struct PointLight {
   vec3 position;
@@ -69,24 +69,24 @@ uniform sampler2D u_Diffuse;
 uniform sampler2D u_Specular;
 uniform float u_Shininess;
 
-uniform DirectionalLight u_Directional_light;
+// uniform DirectionalLight u_Directional_light;
 uniform mat3 u_Normal_matrix;
 
 void main()
 {    
-    vec3 ambient = u_Directional_light.ambient * u_Directional_light.diffuse * vec3(texture(u_Diffuse, f_UV));
+    vec3 ambient = ub_Directional_light.ambient.xyz * ub_Directional_light.diffuse.xyz * vec3(texture(u_Diffuse, f_UV));
 
     vec3 normal = normalize(u_Normal_matrix * f_Normal);
-    vec3 light_direction = normalize(-u_Directional_light.direction);
+    vec3 light_direction = normalize(-ub_Directional_light.direction.xyz);
 
     float diffuse_impact = max(dot(normal, light_direction), 0.0);
-    vec3 diffuse = diffuse_impact * u_Directional_light.diffuse * vec3(texture(u_Diffuse, f_UV));
+    vec3 diffuse = diffuse_impact * ub_Directional_light.diffuse.xyz * vec3(texture(u_Diffuse, f_UV));
 
     vec3 view_direction = normalize(ub_Camera.position.xyz - f_Position);
     vec3 reflect_direction = reflect(-light_direction, normal);
 
     float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_Shininess);
-    vec3 specular = u_Directional_light.specular * spec * u_Directional_light.diffuse * vec3(texture(u_Specular, f_UV));
+    vec3 specular = ub_Directional_light.specular * spec * ub_Directional_light.diffuse.xyz * vec3(texture(u_Specular, f_UV));
     
     vec3 result = (ambient + diffuse + specular) * u_Tint.xyz;
     color = vec4(result, 1.0f);
