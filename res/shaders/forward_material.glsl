@@ -31,7 +31,8 @@ void main()
 #version 330 core
 #extension GL_ARB_separate_shader_objects: enable
 
-out vec4 color;
+layout (location = 0) out vec4 color;
+layout (location = 1) out vec4 bright_color;
 
 in vec3 f_Position;
 in vec3 f_Normal;
@@ -100,13 +101,19 @@ void main()
 
     vec3 result = calc_directional_light(normal, view_direction, material_diffuse, material_specular);
 
-    for(int i = 0; i < 2; i++) {
+    for(int i = 0; i < ub_Point_lights.count; i++) {
 	PointLight point_light = PointLight(ub_Point_lights.positions[i].xyz, ub_Point_lights.constants[i].x, ub_Point_lights.linears[i].x, ub_Point_lights.quadratics[i].x, ub_Point_lights.ambients[i].xyz, ub_Point_lights.diffuses[i].xyz, ub_Point_lights.speculars[i].x);
 	result += calc_point_light(point_light, normal, view_direction, material_diffuse, material_specular);
     }
 
     result *= u_Tint.xyz;
     color = vec4(result, 1.0f);
+
+    float brightness = dot(color.rgb, vec3(0.2126, 0.7152, 0.0722));
+    if(brightness > 1.0)
+        bright_color = vec4(color.rgb, 1.0);
+    else
+        bright_color = vec4(0.0, 0.0, 0.0, 1.0);
 }
 
 vec3 calc_directional_light(vec3 normal, vec3 view_direction, vec3 material_diffuse, vec3 material_specular) 
@@ -144,6 +151,6 @@ vec3 calc_point_light(PointLight light, vec3 normal, vec3 view_direction, vec3 m
 
     // Point light attenuation
     float distance = length(light.position.xyz - f_Position);
-    float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * (distance * distance));
+    float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * distance);
     return (ambient + diffuse + specular) * attenuation;
 }

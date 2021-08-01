@@ -24,11 +24,13 @@ void main()
 #shader fragment
 #version 330 core
 #extension GL_ARB_separate_shader_objects: enable
-layout (location = 0) out vec4 FragColor;
+layout (location = 0) out vec4 color;
+layout (location = 1) out vec4 bright_color;
 
 uniform vec4 u_Color;
 
 void main()
 {           
-    FragColor = u_Color;
+    color = vec4(1.0);
+    bright_color = u_Color;
 }
