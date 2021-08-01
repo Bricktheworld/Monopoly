@@ -50,6 +50,7 @@ layout (std140) uniform DirectionalLight {
   vec4 ambient;
   vec4 diffuse;
   float specular;
+  float intensity;
   int exists;
 } ub_Directional_light;
 
@@ -63,9 +64,10 @@ struct PointLight {
   vec3 ambient;
   vec3 diffuse;
   float specular;
+  float intensity;
 };
 
-#define MAX_POINT_LIGHTS 512
+#define MAX_POINT_LIGHTS 256
 layout (std140) uniform PointLights {
   vec4 positions[MAX_POINT_LIGHTS];
 
@@ -76,6 +78,7 @@ layout (std140) uniform PointLights {
   vec4 ambients[MAX_POINT_LIGHTS];
   vec4 diffuses[MAX_POINT_LIGHTS];
   vec4 speculars[MAX_POINT_LIGHTS];
+  vec4 intensities[MAX_POINT_LIGHTS];
 
   int count;
 } ub_Point_lights;
@@ -102,7 +105,7 @@ void main()
     vec3 result = calc_directional_light(normal, view_direction, material_diffuse, material_specular);
 
     for(int i = 0; i < ub_Point_lights.count; i++) {
-	PointLight point_light = PointLight(ub_Point_lights.positions[i].xyz, ub_Point_lights.constants[i].x, ub_Point_lights.linears[i].x, ub_Point_lights.quadratics[i].x, ub_Point_lights.ambients[i].xyz, ub_Point_lights.diffuses[i].xyz, ub_Point_lights.speculars[i].x);
+	PointLight point_light = PointLight(ub_Point_lights.positions[i].xyz, ub_Point_lights.constants[i].x, ub_Point_lights.linears[i].x, ub_Point_lights.quadratics[i].x, ub_Point_lights.ambients[i].xyz, ub_Point_lights.diffuses[i].xyz, ub_Point_lights.speculars[i].x, ub_Point_lights.intensities[i].x);
 	result += calc_point_light(point_light, normal, view_direction, material_diffuse, material_specular);
     }
 
@@ -132,7 +135,7 @@ vec3 calc_directional_light(vec3 normal, vec3 view_direction, vec3 material_diff
     float spec = pow(max(dot(view_direction, reflect_direction), 0.0), u_Shininess);
     vec3 specular = ub_Directional_light.specular * spec * ub_Directional_light.diffuse.xyz * material_specular;
 
-    return ambient + diffuse + specular;
+    return (ambient + diffuse + specular) * ub_Directional_light.intensity;
 }
 
 vec3 calc_point_light(PointLight light, vec3 normal, vec3 view_direction, vec3 material_diffuse, vec3 material_specular) 
@@ -152,5 +155,5 @@ vec3 calc_point_light(PointLight light, vec3 normal, vec3 view_direction, vec3 m
     // Point light attenuation
     float distance = length(light.position.xyz - f_Position);
     float attenuation = 1.0 / (light.constant + light.linear * distance + light.quadratic * distance);
-    return (ambient + diffuse + specular) * attenuation;
+    return (ambient + diffuse + specular) * attenuation * light.intensity;
 }

@@ -30,16 +30,17 @@ void main()
 {           
     const float gamma = 2.2;
 
-    vec3 texture_color = texture(u_Render_texture, f_UV).rgb;
+    vec3 hdr_color = texture(u_Render_texture, f_UV).rgb;
     vec3 bloom_color = texture(u_Bloom_texture, f_UV).rgb;
     bloom_color *= u_Bloom_intensity;
+    hdr_color += bloom_color;
 
     // Exposure tone mapping
-    vec3 hdr_color = texture_color + bloom_color; // texture_color / (texture_color + vec3(1.0));
-    // hdr_color = vec3(1.0) - exp(-hdr_color * u_Exposure);
+    //vec3 hdr_color = texture_color / (texture_color + vec3(1.0));
+    vec3 result = vec3(1.0) - exp(-hdr_color * u_Exposure);
 
     // Gamma correction
-    hdr_color = pow(hdr_color, vec3(1.0 / gamma));
+    result = pow(result, vec3(1.0 / gamma));
 
-    color = vec4(hdr_color, 1.0f);
+    color = vec4(result, 1.0f);
 }
