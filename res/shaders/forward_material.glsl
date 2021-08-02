@@ -5,10 +5,13 @@
 layout (location = 0) in vec3 v_Position;
 layout (location = 1) in vec3 v_Normal;
 layout (location = 2) in vec2 v_UV;
+layout (location = 3) in vec3 v_Tangent;
+layout (location = 4) in vec3 v_Bitangent;
 
 out vec3 f_Normal;
 out vec3 f_Position;
 out vec2 f_UV;
+out mat3 f_TBN;
 
 layout (std140) uniform Camera {
     vec4 position;
@@ -18,6 +21,7 @@ layout (std140) uniform Camera {
 
 uniform mat4 u_MVP;
 uniform mat4 u_Model_matrix;
+uniform mat3 u_Normal_matrix;
 
 void main() 
 {
@@ -25,6 +29,17 @@ void main()
     f_Position  = vec3(u_Model_matrix * vec4(v_Position, 1.0f));
     f_Normal  	= v_Normal;
     f_UV 	= v_UV;
+
+
+    // TBN matrix calculation
+    vec3 T = normalize(u_Normal_matrix * v_Tangent);
+    vec3 N = normalize(u_Normal_matrix * v_Normal);
+    // Re-orthogonalize T with respect to N
+    T = normalize(T - dot(T, N) * N);
+
+    vec3 B = cross(N, T);
+
+    f_TBN = mat3(T, B, N);
 }
 
 #shader fragment
@@ -37,6 +52,7 @@ layout (location = 1) out vec4 bright_color;
 in vec3 f_Position;
 in vec3 f_Normal;
 in vec2 f_UV;
+in mat3 f_TBN;
 
 layout (std140) uniform Camera {
     vec4 position;
@@ -86,7 +102,13 @@ layout (std140) uniform PointLights {
 uniform vec4 u_Tint;
 
 uniform sampler2D u_Diffuse;
+
+uniform int u_Has_specular_map = 0;
 uniform sampler2D u_Specular;
+
+uniform int u_Has_normal_map;
+uniform sampler2D u_Normal;
+
 uniform float u_Shininess;
 
 uniform mat3 u_Normal_matrix;
@@ -96,22 +118,47 @@ vec3 calc_directional_light(vec3 normal, vec3 view_direction, vec3 material_diff
 
 void main()
 {    
-    vec3 normal = normalize(u_Normal_matrix * f_Normal);
+    vec3 normal;
+    if(u_Has_normal_map == 0) 
+    {
+	normal = normalize(u_Normal_matrix * f_Normal);
+    }
+    else
+    {
+	// Get normal from normal map in range [0, 1]
+	normal = texture(u_Normal, f_UV).rgb;
+
+	// Map this normal to a range [-1, 1]
+	normal = normal * 2.0 - 1.0;
+
+	normal = normalize(f_TBN * normal);
+    }
+
     vec3 view_direction = normalize(ub_Camera.position.xyz - f_Position);
 
     vec3 material_diffuse = vec3(texture(u_Diffuse, f_UV));
-    vec3 material_specular = vec3(texture(u_Specular, f_UV));
+    vec3 material_specular = u_Has_specular_map == 1 ? vec3(texture(u_Specular, f_UV)) : vec3(0.1);
 
     vec3 result = calc_directional_light(normal, view_direction, material_diffuse, material_specular);
 
-    for(int i = 0; i < ub_Point_lights.count; i++) {
-	PointLight point_light = PointLight(ub_Point_lights.positions[i].xyz, ub_Point_lights.constants[i].x, ub_Point_lights.linears[i].x, ub_Point_lights.quadratics[i].x, ub_Point_lights.ambients[i].xyz, ub_Point_lights.diffuses[i].xyz, ub_Point_lights.speculars[i].x, ub_Point_lights.intensities[i].x);
+    for(int i = 0; i < ub_Point_lights.count; i++) 
+    {
+	PointLight point_light = PointLight(ub_Point_lights.positions[i].xyz,
+					    ub_Point_lights.constants[i].x,
+					    ub_Point_lights.linears[i].x,
+					    ub_Point_lights.quadratics[i].x,
+					    ub_Point_lights.ambients[i].xyz,
+					    ub_Point_lights.diffuses[i].xyz,
+					    ub_Point_lights.speculars[i].x,
+					    ub_Point_lights.intensities[i].x);
+
 	result += calc_point_light(point_light, normal, view_direction, material_diffuse, material_specular);
     }
 
     result *= u_Tint.xyz;
     color = vec4(result, 1.0f);
 
+    // Bloom
     float brightness = dot(color.rgb, vec3(0.2126, 0.7152, 0.0722));
     if(brightness > 1.0)
         bright_color = vec4(color.rgb, 1.0);

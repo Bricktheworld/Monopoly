@@ -4,10 +4,10 @@
             "CameraComponent": {
                 "component_array": [
                     {
-                        "bloom_intensity": 1.559999942779541,
-                        "bloom_quality": 6,
+                        "bloom_intensity": 1.0,
+                        "bloom_quality": 4,
                         "enabled": true,
-                        "exposure": 2.640000104904175,
+                        "exposure": 1.0,
                         "fov": 45.0,
                         "zfar": 1000.0,
                         "znear": 0.10000000149011612
@@ -37,26 +37,26 @@
                     {
                         "ambient": {
                             "value": {
-                                "w": 255.0,
-                                "x": 0.0,
-                                "y": 0.0036478042602539063,
-                                "z": 255.0
+                                "w": 1.0,
+                                "x": 163.0,
+                                "y": 226.0,
+                                "z": 253.0
                             }
                         },
-                        "constant": 1.0,
+                        "constant": 0.0,
                         "diffuse": {
                             "value": {
-                                "w": 255.0,
-                                "x": 0.0,
-                                "y": 0.00662684440612793,
-                                "z": 255.0
+                                "w": 1.0,
+                                "x": 163.08685302734375,
+                                "y": 226.12646484375,
+                                "z": 253.04348754882813
                             }
                         },
                         "intensity": 1.0,
-                        "linear": 0.14000000059604645,
-                        "quadratic": 0.07000000029802322,
-                        "specular": 2.759999990463257,
-                        "type": 1
+                        "linear": 0.0,
+                        "quadratic": 0.0,
+                        "specular": 0.8999999761581421,
+                        "type": 0
                     },
                     {
                         "ambient": {
@@ -76,16 +76,16 @@
                                 "z": 255.0
                             }
                         },
-                        "intensity": 0.5799999833106995,
+                        "intensity": 0.5,
                         "linear": 0.14000000059604645,
                         "quadratic": 0.07000000029802322,
-                        "specular": 2.759999990463257,
+                        "specular": 1.0,
                         "type": 1
                     }
                 ],
                 "entity_to_index_map": [
                     [
-                        2,
+                        8,
                         0
                     ],
                     [
@@ -95,12 +95,12 @@
                 ],
                 "index_to_entity_map": [
                     [
-                        0,
-                        2
-                    ],
-                    [
                         1,
                         1
+                    ],
+                    [
+                        0,
+                        8
                     ]
                 ],
                 "size": 2
@@ -124,34 +124,9 @@
                             "expected_extensions": [
                                 ".glsl"
                             ],
-                            "path": "shaders/unlit.glsl"
-                        },
-                        "texture_count": 0,
-                        "textures": [],
-                        "uniform_count": 1,
-                        "uniforms": [
-                            {
-                                "data.u_color": {
-                                    "value": {
-                                        "w": 255.0,
-                                        "x": 0.0,
-                                        "y": 0.05496025085449219,
-                                        "z": 255.0
-                                    }
-                                },
-                                "location": "u_Color",
-                                "type": 7
-                            }
-                        ]
-                    },
-                    {
-                        "shader_source": {
-                            "expected_extensions": [
-                                ".glsl"
-                            ],
                             "path": "shaders/forward_material.glsl"
                         },
-                        "texture_count": 2,
+                        "texture_count": 3,
                         "textures": [
                             {
                                 "file": {
@@ -162,8 +137,9 @@
                                         ".bmp",
                                         ".dds"
                                     ],
-                                    "path": "textures/cube/diffuse.png"
+                                    "path": "models/wood_container/udribbjqx_4K_Albedo.jpg"
                                 },
+                                "is_set_location": "",
                                 "location": "u_Diffuse"
                             },
                             {
@@ -175,9 +151,24 @@
                                         ".bmp",
                                         ".dds"
                                     ],
-                                    "path": "textures/cube/specular.png"
+                                    "path": "models/wood_container/udribbjqx_2K_Specular.jpg"
                                 },
+                                "is_set_location": "u_Has_specular_map",
                                 "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wood_container/udribbjqx_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
                             }
                         ],
                         "uniform_count": 2,
@@ -187,15 +178,15 @@
                                     "value": {
                                         "w": 255.0,
                                         "x": 255.0,
-                                        "y": 254.99745178222656,
-                                        "z": 254.99745178222656
+                                        "y": 255.0,
+                                        "z": 255.0
                                     }
                                 },
                                 "location": "u_Tint",
                                 "type": 7
                             },
                             {
-                                "data.u_f32": 128.0,
+                                "data.u_f32": 1.0,
                                 "location": "u_Shininess",
                                 "type": 3
                             }
@@ -208,7 +199,7 @@
                             ],
                             "path": "shaders/forward_material.glsl"
                         },
-                        "texture_count": 2,
+                        "texture_count": 3,
                         "textures": [
                             {
                                 "file": {
@@ -219,8 +210,9 @@
                                         ".bmp",
                                         ".dds"
                                     ],
-                                    "path": "textures/cube/diffuse.png"
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Albedo.jpg"
                                 },
+                                "is_set_location": "",
                                 "location": "u_Diffuse"
                             },
                             {
@@ -232,9 +224,24 @@
                                         ".bmp",
                                         ".dds"
                                     ],
-                                    "path": "textures/cube/specular.png"
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Specular.jpg"
                                 },
+                                "is_set_location": "u_Has_specular_map",
                                 "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
                             }
                         ],
                         "uniform_count": 2,
@@ -244,15 +251,88 @@
                                     "value": {
                                         "w": 255.0,
                                         "x": 255.0,
-                                        "y": 254.99745178222656,
-                                        "z": 254.99745178222656
+                                        "y": 255.0,
+                                        "z": 255.0
                                     }
                                 },
                                 "location": "u_Tint",
                                 "type": 7
                             },
                             {
-                                "data.u_f32": 128.0,
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wood_container/udribbjqx_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wood_container/udribbjqx_2K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wood_container/udribbjqx_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
                                 "location": "u_Shininess",
                                 "type": 3
                             }
@@ -282,34 +362,1784 @@
                                 "type": 7
                             }
                         ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wall/uebrabtdw_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wall/uebrabtdw_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wall/uebrabtdw_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wood_container/udribbjqx_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wood_container/udribbjqx_2K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wood_container/udribbjqx_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wall/uebrabtdw_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wall/uebrabtdw_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/wall/uebrabtdw_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
+                    },
+                    {
+                        "shader_source": {
+                            "expected_extensions": [
+                                ".glsl"
+                            ],
+                            "path": "shaders/forward_material.glsl"
+                        },
+                        "texture_count": 3,
+                        "textures": [
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Albedo.jpg"
+                                },
+                                "is_set_location": "",
+                                "location": "u_Diffuse"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Specular.jpg"
+                                },
+                                "is_set_location": "u_Has_specular_map",
+                                "location": "u_Specular"
+                            },
+                            {
+                                "file": {
+                                    "expected_extensions": [
+                                        ".jpeg",
+                                        ".jpg",
+                                        ".png",
+                                        ".bmp",
+                                        ".dds"
+                                    ],
+                                    "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_4K_Normal_LOD0.jpg"
+                                },
+                                "is_set_location": "u_Has_normal_map",
+                                "location": "u_Normal"
+                            }
+                        ],
+                        "uniform_count": 2,
+                        "uniforms": [
+                            {
+                                "data.u_color": {
+                                    "value": {
+                                        "w": 255.0,
+                                        "x": 255.0,
+                                        "y": 255.0,
+                                        "z": 255.0
+                                    }
+                                },
+                                "location": "u_Tint",
+                                "type": 7
+                            },
+                            {
+                                "data.u_f32": 1.0,
+                                "location": "u_Shininess",
+                                "type": 3
+                            }
+                        ]
                     }
                 ],
                 "entity_to_index_map": [
                     [
-                        3,
-                        3
+                        34,
+                        26
+                    ],
+                    [
+                        31,
+                        23
+                    ],
+                    [
+                        29,
+                        21
+                    ],
+                    [
+                        28,
+                        20
+                    ],
+                    [
+                        27,
+                        19
+                    ],
+                    [
+                        26,
+                        18
+                    ],
+                    [
+                        25,
+                        17
+                    ],
+                    [
+                        24,
+                        16
+                    ],
+                    [
+                        23,
+                        15
+                    ],
+                    [
+                        22,
+                        14
+                    ],
+                    [
+                        21,
+                        13
+                    ],
+                    [
+                        35,
+                        7
                     ],
                     [
                         6,
                         0
                     ],
                     [
-                        2,
-                        1
+                        19,
+                        11
                     ],
                     [
-                        9,
-                        2
+                        30,
+                        22
                     ],
                     [
                         1,
                         4
+                    ],
+                    [
+                        14,
+                        2
+                    ],
+                    [
+                        33,
+                        25
+                    ],
+                    [
+                        4,
+                        3
+                    ],
+                    [
+                        17,
+                        9
+                    ],
+                    [
+                        32,
+                        24
+                    ],
+                    [
+                        3,
+                        5
+                    ],
+                    [
+                        16,
+                        6
+                    ],
+                    [
+                        12,
+                        8
+                    ],
+                    [
+                        13,
+                        1
+                    ],
+                    [
+                        18,
+                        10
+                    ],
+                    [
+                        20,
+                        12
                     ]
                 ],
                 "index_to_entity_map": [
                     [
+                        26,
+                        34
+                    ],
+                    [
+                        25,
+                        33
+                    ],
+                    [
+                        24,
+                        32
+                    ],
+                    [
+                        23,
+                        31
+                    ],
+                    [
+                        22,
+                        30
+                    ],
+                    [
+                        21,
+                        29
+                    ],
+                    [
+                        20,
+                        28
+                    ],
+                    [
+                        19,
+                        27
+                    ],
+                    [
+                        18,
+                        26
+                    ],
+                    [
+                        17,
+                        25
+                    ],
+                    [
+                        16,
+                        24
+                    ],
+                    [
+                        15,
+                        23
+                    ],
+                    [
+                        14,
+                        22
+                    ],
+                    [
+                        13,
+                        21
+                    ],
+                    [
                         3,
-                        3
+                        4
                     ],
                     [
                         0,
@@ -317,18 +2147,50 @@
                     ],
                     [
                         1,
-                        2
+                        13
                     ],
                     [
                         2,
-                        9
+                        14
                     ],
                     [
                         4,
                         1
+                    ],
+                    [
+                        5,
+                        3
+                    ],
+                    [
+                        6,
+                        16
+                    ],
+                    [
+                        7,
+                        35
+                    ],
+                    [
+                        8,
+                        12
+                    ],
+                    [
+                        9,
+                        17
+                    ],
+                    [
+                        10,
+                        18
+                    ],
+                    [
+                        11,
+                        19
+                    ],
+                    [
+                        12,
+                        20
                     ]
                 ],
-                "size": 5
+                "size": 27
             },
             "SkyBoxComponent": {
                 "component_array": [
@@ -359,7 +2221,27 @@
                                 ".fbx",
                                 ".blend"
                             ],
-                            "path": "models/cube.obj"
+                            "path": "models/wood_container/udribbjqx_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/wood_container/udribbjqx_LOD0.fbx"
                         }
                     },
                     {
@@ -379,7 +2261,7 @@
                                 ".fbx",
                                 ".blend"
                             ],
-                            "path": "models/cube.obj"
+                            "path": "models/wall/uebrabtdw_LOD0.fbx"
                         }
                     },
                     {
@@ -389,47 +2271,423 @@
                                 ".fbx",
                                 ".blend"
                             ],
-                            "path": "models/cube.obj"
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/wood_container/udribbjqx_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Antique_Architecture_ugrxbjkfa_4K_3d_ms/ugrxbjkfa_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/wall/uebrabtdw_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_LOD0.fbx"
+                        }
+                    },
+                    {
+                        "source": {
+                            "expected_extensions": [
+                                ".obj",
+                                ".fbx",
+                                ".blend"
+                            ],
+                            "path": "models/Assembly_Rock_ujyjbehqx_4K_3d_ms/ujyjbehqx_LOD0.fbx"
                         }
                     }
                 ],
                 "entity_to_index_map": [
                     [
-                        3,
-                        2
+                        35,
+                        6
                     ],
                     [
-                        2,
-                        0
+                        34,
+                        25
                     ],
                     [
-                        9,
-                        1
+                        31,
+                        22
+                    ],
+                    [
+                        29,
+                        20
+                    ],
+                    [
+                        28,
+                        19
+                    ],
+                    [
+                        27,
+                        18
+                    ],
+                    [
+                        26,
+                        17
+                    ],
+                    [
+                        25,
+                        16
+                    ],
+                    [
+                        24,
+                        15
+                    ],
+                    [
+                        23,
+                        14
+                    ],
+                    [
+                        22,
+                        13
+                    ],
+                    [
+                        30,
+                        21
                     ],
                     [
                         1,
                         3
+                    ],
+                    [
+                        14,
+                        1
+                    ],
+                    [
+                        33,
+                        24
+                    ],
+                    [
+                        4,
+                        2
+                    ],
+                    [
+                        17,
+                        8
+                    ],
+                    [
+                        32,
+                        23
+                    ],
+                    [
+                        3,
+                        4
+                    ],
+                    [
+                        16,
+                        5
+                    ],
+                    [
+                        12,
+                        7
+                    ],
+                    [
+                        13,
+                        0
+                    ],
+                    [
+                        18,
+                        9
+                    ],
+                    [
+                        19,
+                        10
+                    ],
+                    [
+                        20,
+                        11
+                    ],
+                    [
+                        21,
+                        12
                     ]
                 ],
                 "index_to_entity_map": [
                     [
+                        25,
+                        34
+                    ],
+                    [
+                        24,
+                        33
+                    ],
+                    [
+                        23,
+                        32
+                    ],
+                    [
+                        22,
+                        31
+                    ],
+                    [
+                        21,
+                        30
+                    ],
+                    [
+                        20,
+                        29
+                    ],
+                    [
+                        19,
+                        28
+                    ],
+                    [
+                        18,
+                        27
+                    ],
+                    [
+                        17,
+                        26
+                    ],
+                    [
+                        16,
+                        25
+                    ],
+                    [
+                        15,
+                        24
+                    ],
+                    [
+                        14,
+                        23
+                    ],
+                    [
+                        13,
+                        22
+                    ],
+                    [
                         2,
-                        3
+                        4
                     ],
                     [
                         0,
-                        2
+                        13
                     ],
                     [
                         1,
-                        9
+                        14
                     ],
                     [
                         3,
                         1
+                    ],
+                    [
+                        4,
+                        3
+                    ],
+                    [
+                        5,
+                        16
+                    ],
+                    [
+                        6,
+                        35
+                    ],
+                    [
+                        7,
+                        12
+                    ],
+                    [
+                        8,
+                        17
+                    ],
+                    [
+                        9,
+                        18
+                    ],
+                    [
+                        10,
+                        19
+                    ],
+                    [
+                        11,
+                        20
+                    ],
+                    [
+                        12,
+                        21
                     ]
                 ],
-                "size": 4
+                "size": 26
             },
             "TestComponent": {
                 "entity_to_index_map": [],
@@ -440,45 +2698,81 @@
                 "component_array": [
                     {
                         "position": {
-                            "x": -0.11299999803304672,
-                            "y": 1.2731961011886597,
-                            "z": 1.7652463912963867
+                            "x": 0.19550079107284546,
+                            "y": 1.0764456987380981,
+                            "z": -1.3669949769973755
                         },
                         "rotation": {
-                            "w": 0.8531420826911926,
-                            "x": -0.10223312675952911,
-                            "y": -0.49085676670074463,
-                            "z": -0.14407162368297577
+                            "w": -0.021659523248672485,
+                            "x": -7.711543759114647e-08,
+                            "y": -0.9997653961181641,
+                            "z": 7.711543759114647e-08
                         },
                         "scale": {
-                            "x": 0.999995768070221,
-                            "y": 1.0,
-                            "z": 0.9999945163726807
+                            "x": 0.9999743700027466,
+                            "y": 0.9999996423721313,
+                            "z": 0.9999743700027466
                         }
                     },
                     {
                         "position": {
-                            "x": 2.2576708793640137,
-                            "y": 2.9802322387695313e-08,
-                            "z": -0.0873105525970459
+                            "x": 0.03630545735359192,
+                            "y": 0.017866268754005432,
+                            "z": -3.228393077850342
                         },
                         "rotation": {
-                            "w": -0.193856343626976,
-                            "x": -8.870144796446766e-08,
-                            "y": 0.9810299277305603,
-                            "z": -8.870144796446766e-08
+                            "w": 0.9834899306297302,
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.180962935090065
                         },
                         "scale": {
-                            "x": 1.0000003576278687,
+                            "x": 1.0,
                             "y": 1.0,
-                            "z": 1.0000003576278687
+                            "z": 1.0
                         }
                     },
                     {
                         "position": {
-                            "x": 5.654852867126465,
-                            "y": 0.7272684574127197,
-                            "z": -1.2758121490478516
+                            "x": -0.3378867208957672,
+                            "y": 0.3448253273963928,
+                            "z": -0.2422785460948944
+                        },
+                        "rotation": {
+                            "w": 0.966596782207489,
+                            "x": 0.0,
+                            "y": 0.2563019096851349,
+                            "z": 0.0
+                        },
+                        "scale": {
+                            "x": 0.014296802692115307,
+                            "y": 0.014296802692115307,
+                            "z": 0.014296802692115307
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 0.5719788670539856,
+                            "y": 0.31829115748405457,
+                            "z": 3.09342098236084
+                        },
+                        "rotation": {
+                            "w": 0.25400781631469727,
+                            "x": -5.3844679825942876e-08,
+                            "y": -0.9672021865844727,
+                            "z": 5.3844679825942876e-08
+                        },
+                        "scale": {
+                            "x": 0.006900059059262276,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900059059262276
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 0.7810693383216858,
+                            "y": 2.177595615386963,
+                            "z": -0.7200407981872559
                         },
                         "rotation": {
                             "w": 1.0,
@@ -487,34 +2781,34 @@
                             "z": 0.0
                         },
                         "scale": {
-                            "x": 0.36000001430511475,
-                            "y": 0.36000001430511475,
-                            "z": 0.36000001430511475
+                            "x": 0.09359999001026154,
+                            "y": 0.09359999001026154,
+                            "z": 0.09359999001026154
                         }
                     },
                     {
                         "position": {
-                            "x": 3.875107765197754,
-                            "y": 6.282144227043318e-07,
-                            "z": -3.673511028289795
+                            "x": 0.04633764550089836,
+                            "y": 0.610266923904419,
+                            "z": -0.030434198677539825
                         },
                         "rotation": {
-                            "w": 0.8416571617126465,
-                            "x": 8.666912520993719e-08,
-                            "y": -0.5400122404098511,
-                            "z": 1.236287943129355e-07
+                            "w": 0.7116793990135193,
+                            "x": 0.6944052577018738,
+                            "y": 0.0788915827870369,
+                            "z": -0.07134418934583664
                         },
                         "scale": {
-                            "x": 0.9999996423721313,
-                            "y": 1.0,
-                            "z": 0.9999996423721313
+                            "x": 0.01429680921137333,
+                            "y": 0.014296810142695904,
+                            "z": 0.014297346584498882
                         }
                     },
                     {
                         "position": {
-                            "x": -1.0430991649627686,
-                            "y": 0.7272685766220093,
-                            "z": -0.11171680688858032
+                            "x": -0.12770801782608032,
+                            "y": 0.10237111151218414,
+                            "z": -0.9492325782775879
                         },
                         "rotation": {
                             "w": 1.0,
@@ -523,42 +2817,584 @@
                             "z": 0.0
                         },
                         "scale": {
-                            "x": 0.36000001430511475,
-                            "y": 0.36000001430511475,
-                            "z": 0.36000001430511475
+                            "x": 0.011700010858476162,
+                            "y": 0.011700010858476162,
+                            "z": 0.011700010858476162
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1.7147669792175293,
+                            "y": 0.31937509775161743,
+                            "z": 1.2923786640167236
+                        },
+                        "rotation": {
+                            "w": 0.24673165380954742,
+                            "x": 5.453607343497424e-08,
+                            "y": -0.969083845615387,
+                            "z": -5.453607343497424e-08
+                        },
+                        "scale": {
+                            "x": 0.006900070700794458,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900070700794458
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -2.784888505935669,
+                            "y": 0.37844160199165344,
+                            "z": 1.5481395721435547
+                        },
+                        "rotation": {
+                            "w": 0.8621659278869629,
+                            "x": 0.06153959780931473,
+                            "y": 0.5014925003051758,
+                            "z": -0.03725690767168999
+                        },
+                        "scale": {
+                            "x": 0.005345111712813377,
+                            "y": 0.006900037173181772,
+                            "z": 0.006900029722601175
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 0.5113341212272644,
+                            "y": 0.3448251485824585,
+                            "z": -0.43988996744155884
+                        },
+                        "rotation": {
+                            "w": 1.0,
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "scale": {
+                            "x": 0.014296802692115307,
+                            "y": 0.014296802692115307,
+                            "z": 0.014296802692115307
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1.1716101169586182,
+                            "y": 0.31938305497169495,
+                            "z": -0.7636998891830444
+                        },
+                        "rotation": {
+                            "w": 0.25400781631469727,
+                            "x": -5.3844679825942876e-08,
+                            "y": -0.9672021865844727,
+                            "z": 5.3844679825942876e-08
+                        },
+                        "scale": {
+                            "x": 0.006900059059262276,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900059059262276
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1.504303216934204,
+                            "y": 0.319390207529068,
+                            "z": 0.3134162425994873
+                        },
+                        "rotation": {
+                            "w": 0.25400781631469727,
+                            "x": -5.3844679825942876e-08,
+                            "y": -0.9672021865844727,
+                            "z": 5.3844679825942876e-08
+                        },
+                        "scale": {
+                            "x": 0.006900059059262276,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900059059262276
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 0.3622472882270813,
+                            "y": 0.319383442401886,
+                            "z": 0.2833055555820465
+                        },
+                        "rotation": {
+                            "w": 0.25400781631469727,
+                            "x": -5.3844679825942876e-08,
+                            "y": -0.9672021865844727,
+                            "z": 5.3844679825942876e-08
+                        },
+                        "scale": {
+                            "x": 0.006900059059262276,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900059059262276
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 0.2572663724422455,
+                            "y": 0.2564532458782196,
+                            "z": -0.35131728649139404
+                        },
+                        "rotation": {
+                            "w": 0.5067822337150574,
+                            "x": 0.04791545867919922,
+                            "y": 0.8607338070869446,
+                            "z": 0.003652457147836685
+                        },
+                        "scale": {
+                            "x": 0.006900921929627657,
+                            "y": 0.006900034844875336,
+                            "z": 0.0069008576683700085
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 0.6880555748939514,
+                            "y": 0.31938326358795166,
+                            "z": 1.3058103322982788
+                        },
+                        "rotation": {
+                            "w": 0.8669968843460083,
+                            "x": -1.1333778360267388e-08,
+                            "y": -0.4983136057853699,
+                            "z": -3.7067685809688555e-08
+                        },
+                        "scale": {
+                            "x": 0.006900064181536436,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900064181536436
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1.1053588390350342,
+                            "y": 0.3193833529949188,
+                            "z": 2.499983310699463
+                        },
+                        "rotation": {
+                            "w": 0.8669968843460083,
+                            "x": -1.1333776583910549e-08,
+                            "y": -0.4983136057853699,
+                            "z": -3.706769291511591e-08
+                        },
+                        "scale": {
+                            "x": 0.006900064181536436,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900064181536436
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 0.07257401943206787,
+                            "y": 0.29183685779571533,
+                            "z": 2.062653064727783
+                        },
+                        "rotation": {
+                            "w": 0.9633756279945374,
+                            "x": 1.84607387154756e-08,
+                            "y": 0.26815560460090637,
+                            "z": -3.408330684351313e-08
+                        },
+                        "scale": {
+                            "x": 0.006900065112859011,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900065112859011
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -0.49515682458877563,
+                            "y": 0.30385082960128784,
+                            "z": 0.9108339548110962
+                        },
+                        "rotation": {
+                            "w": 0.963097095489502,
+                            "x": 0.023165982216596603,
+                            "y": 0.2680780589580536,
+                            "z": -0.00644829124212265
+                        },
+                        "scale": {
+                            "x": 0.006900065112859011,
+                            "y": 0.006900036241859198,
+                            "z": 0.006900064647197723
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -1.07676100730896,
+                            "y": 0.2740027904510498,
+                            "z": 2.0378763675689697
+                        },
+                        "rotation": {
+                            "w": 0.9627676606178284,
+                            "x": 0.01771872490644455,
+                            "y": 0.26849305629730225,
+                            "z": -0.025999637320637703
+                        },
+                        "scale": {
+                            "x": 0.006900064181536436,
+                            "y": 0.006900036707520485,
+                            "z": 0.006900065112859011
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 0.0971989780664444,
+                            "y": 0.1873469352722168,
+                            "z": 2.858081102371216
+                        },
+                        "rotation": {
+                            "w": 0.9627676606178284,
+                            "x": 0.01771872490644455,
+                            "y": 0.26849305629730225,
+                            "z": -0.025999637320637703
+                        },
+                        "scale": {
+                            "x": 0.006900064181536436,
+                            "y": 0.006900036707520485,
+                            "z": 0.006900065112859011
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -0.9222411513328552,
+                            "y": 0.2416781187057495,
+                            "z": 3.181230068206787
+                        },
+                        "rotation": {
+                            "w": 0.5067561268806458,
+                            "x": 0.030801109969615936,
+                            "y": 0.8615151047706604,
+                            "z": -0.0064194779843091965
+                        },
+                        "scale": {
+                            "x": 0.006900124251842499,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900130771100521
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -2.61627459526062,
+                            "y": 0.3775809407234192,
+                            "z": 1.4585837125778198
+                        },
+                        "rotation": {
+                            "w": 0.5067561268806458,
+                            "x": 0.030801109969615936,
+                            "y": 0.8615151047706604,
+                            "z": -0.0064194779843091965
+                        },
+                        "scale": {
+                            "x": 0.006900124251842499,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900130771100521
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -1.407271146774292,
+                            "y": 0.3192669451236725,
+                            "z": 0.8993265628814697
+                        },
+                        "rotation": {
+                            "w": 0.5067822337150574,
+                            "x": 0.04791545867919922,
+                            "y": 0.8607338070869446,
+                            "z": 0.003652457147836685
+                        },
+                        "scale": {
+                            "x": 0.006900358945131302,
+                            "y": 0.006900034844875336,
+                            "z": 0.0069003333337605
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -0.46388253569602966,
+                            "y": 0.29502081871032715,
+                            "z": -0.015600964426994324
+                        },
+                        "rotation": {
+                            "w": 0.5067822337150574,
+                            "x": 0.04791545867919922,
+                            "y": 0.8607338070869446,
+                            "z": 0.003652457147836685
+                        },
+                        "scale": {
+                            "x": 0.006900959648191929,
+                            "y": 0.006900034844875336,
+                            "z": 0.0069008939899504185
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -2.0945725440979004,
+                            "y": 0.32240989804267883,
+                            "z": 2.648676633834839
+                        },
+                        "rotation": {
+                            "w": 0.5067561268806458,
+                            "x": 0.030801109969615936,
+                            "y": 0.8615151047706604,
+                            "z": -0.0064194779843091965
+                        },
+                        "scale": {
+                            "x": 0.006900124251842499,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900130771100521
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1.0325164794921875,
+                            "y": 0.10237491130828857,
+                            "z": 0.19924500584602356
+                        },
+                        "rotation": {
+                            "w": 1.0,
+                            "x": 0.0,
+                            "y": 0.0,
+                            "z": 0.0
+                        },
+                        "scale": {
+                            "x": 0.011700010858476162,
+                            "y": 0.011700010858476162,
+                            "z": 0.011700010858476162
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": 1.931543231010437,
+                            "y": 0.31829896569252014,
+                            "z": 1.2751950025558472
+                        },
+                        "rotation": {
+                            "w": 0.7954598665237427,
+                            "x": 0.0,
+                            "y": 0.6060062646865845,
+                            "z": 0.0
+                        },
+                        "scale": {
+                            "x": 0.006900033913552761,
+                            "y": 0.006900034379214048,
+                            "z": 0.006900033913552761
+                        }
+                    },
+                    {
+                        "position": {
+                            "x": -1.2357301712036133,
+                            "y": 0.4245087504386902,
+                            "z": -0.20332472026348114
+                        },
+                        "rotation": {
+                            "w": 0.9372518062591553,
+                            "x": 0.08515424281358719,
+                            "y": 0.3378491997718811,
+                            "z": 0.012873291969299316
+                        },
+                        "scale": {
+                            "x": 0.006900036241859198,
+                            "y": 0.006900029256939888,
+                            "z": 0.006900029256939888
                         }
                     }
                 ],
                 "entity_to_index_map": [
                     [
-                        3,
-                        3
+                        34,
+                        27
+                    ],
+                    [
+                        31,
+                        24
+                    ],
+                    [
+                        29,
+                        22
+                    ],
+                    [
+                        28,
+                        21
+                    ],
+                    [
+                        27,
+                        20
+                    ],
+                    [
+                        26,
+                        19
+                    ],
+                    [
+                        25,
+                        18
+                    ],
+                    [
+                        24,
+                        17
+                    ],
+                    [
+                        23,
+                        16
+                    ],
+                    [
+                        22,
+                        15
+                    ],
+                    [
+                        21,
+                        14
+                    ],
+                    [
+                        20,
+                        13
+                    ],
+                    [
+                        19,
+                        12
+                    ],
+                    [
+                        18,
+                        11
+                    ],
+                    [
+                        17,
+                        10
+                    ],
+                    [
+                        16,
+                        7
+                    ],
+                    [
+                        35,
+                        8
                     ],
                     [
                         6,
                         0
                     ],
                     [
-                        2,
-                        2
-                    ],
-                    [
-                        9,
-                        1
+                        30,
+                        23
                     ],
                     [
                         1,
                         4
+                    ],
+                    [
+                        14,
+                        3
+                    ],
+                    [
+                        33,
+                        26
+                    ],
+                    [
+                        4,
+                        5
+                    ],
+                    [
+                        8,
+                        1
+                    ],
+                    [
+                        32,
+                        25
+                    ],
+                    [
+                        3,
+                        6
+                    ],
+                    [
+                        12,
+                        9
+                    ],
+                    [
+                        13,
+                        2
                     ]
                 ],
                 "index_to_entity_map": [
                     [
+                        27,
+                        34
+                    ],
+                    [
+                        26,
+                        33
+                    ],
+                    [
+                        25,
+                        32
+                    ],
+                    [
+                        24,
+                        31
+                    ],
+                    [
+                        23,
+                        30
+                    ],
+                    [
+                        22,
+                        29
+                    ],
+                    [
+                        21,
+                        28
+                    ],
+                    [
+                        20,
+                        27
+                    ],
+                    [
+                        19,
+                        26
+                    ],
+                    [
+                        18,
+                        25
+                    ],
+                    [
+                        17,
+                        24
+                    ],
+                    [
+                        16,
+                        23
+                    ],
+                    [
+                        15,
+                        22
+                    ],
+                    [
+                        14,
+                        21
+                    ],
+                    [
+                        13,
+                        20
+                    ],
+                    [
+                        12,
+                        19
+                    ],
+                    [
+                        11,
+                        18
+                    ],
+                    [
+                        10,
+                        17
+                    ],
+                    [
                         3,
-                        3
+                        14
                     ],
                     [
                         1,
-                        9
+                        8
                     ],
                     [
                         0,
@@ -566,14 +3402,34 @@
                     ],
                     [
                         2,
-                        2
+                        13
                     ],
                     [
                         4,
                         1
+                    ],
+                    [
+                        5,
+                        4
+                    ],
+                    [
+                        6,
+                        3
+                    ],
+                    [
+                        7,
+                        16
+                    ],
+                    [
+                        8,
+                        35
+                    ],
+                    [
+                        9,
+                        12
                     ]
                 ],
-                "size": 5
+                "size": 28
             }
         }
     },
@@ -593,13 +3449,36 @@
     "EntityManager": {
         "living_entites": [
             1,
-            2,
             3,
+            4,
             5,
             6,
-            9
+            8,
+            12,
+            13,
+            14,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35
         ],
-        "living_entity_count": 3,
+        "living_entity_count": 26,
         "signatures": {
             "1": [
                 1,
@@ -635,11 +3514,555 @@
                 0,
                 0
             ],
-            "2": [
+            "12": [
                 1,
                 1,
                 1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "13": [
                 1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "14": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "16": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "17": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "18": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "19": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "20": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "21": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "22": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "23": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "24": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "25": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "26": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "27": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "28": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "29": [
+                1,
+                1,
+                1,
+                0,
                 0,
                 0,
                 0,
@@ -670,6 +4093,244 @@
                 0
             ],
             "3": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "30": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "31": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "32": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "33": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "34": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "35": [
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "4": [
                 1,
                 1,
                 1,
@@ -771,11 +4432,11 @@
                 0,
                 0
             ],
-            "9": [
-                1,
-                1,
-                1,
+            "8": [
                 0,
+                0,
+                1,
+                1,
                 0,
                 0,
                 0,
