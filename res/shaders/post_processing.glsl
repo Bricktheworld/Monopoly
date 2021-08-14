@@ -32,8 +32,8 @@ void main()
 
     vec3 hdr_color = texture(u_Render_texture, f_UV).rgb;
     vec3 bloom_color = texture(u_Bloom_texture, f_UV).rgb;
-    bloom_color *= u_Bloom_intensity;
-    hdr_color += bloom_color;
+    // bloom_color *= u_Bloom_intensity;
+    hdr_color = bloom_color;
 
     // Exposure tone mapping
     //vec3 hdr_color = texture_color / (texture_color + vec3(1.0));
