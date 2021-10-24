@@ -5,9 +5,9 @@
 												"adapter": "vscode-cpptools",
 												"configuration": {
 																"request": "launch",
-																"program": "/home/brandon/Dev/Monopoly/GameEngine/VultrEditor/build/VultrEditor",
+																"program": "/home/brandon/Dev/Monopoly/GameEngine/Vultr/build/tests/VultrTests",
 																"args": [],
-																"cwd":"/home/brandon/Dev/Monopoly",
+																"cwd":"/home/brandon/Dev/Monopoly/GameEngine/Vultr",
 																"environment": [],
 																"externalConsole": true,
 																"stopAtEntry":true,
