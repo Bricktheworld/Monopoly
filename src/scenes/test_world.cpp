@@ -1,5 +1,4 @@
 #include <vultr.hpp>
-#include <helpers/file.h>
 #include <scenes/test_world.h>
 #include <systems/test_system.h>
 
